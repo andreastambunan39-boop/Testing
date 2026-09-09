@@ -28,7 +28,7 @@
 ----------------------------------------------------------------------------[ UBAH DATA AKTIF ]----------------------------------------------------------------------------------       
 6. UBAH Data Aktif (Menunggu Approval)
    (CS_Ubah Data Aktif) Melakukan Perubahan Data Aktif
-   Status: Tidak Ada Perubahan (Sebelum)
+   Status (Awal) : Tidak Ada Perubahan
    Action: - Update (Norek Sumber)
              + Simpan (Berikan perubahan & Simpan)
          Impact: A. (CS_Lihat Data) Status: Aktif -> Action: Detail (Belum terdapat perubahan pada Detail Karena belum Diapprove)
@@ -44,7 +44,7 @@
            D. (SCS_Ubah Data Aktif) DSP/DP: Sesuai -> Status: Sudah Disetujui -> Action: -
 
 8. UBAH Data Aktif (Ditolak)
-   (SC_Ubah Data Aktif) Supervisi Menolak Perubahan Data Aktif
+   (SCS_Ubah Data Aktif) Supervisi Menolak Perubahan Data Aktif
    Impact: A. (CS_Lihat Data) Norek Sumber: Tidak Berubah -> Status: Aktif -> Action: Detail (Tidak ada perubahan juga pada Detail)
            B. (CS_Ubah Data Aktif) DSP/DP: Sesuai -> Status: Ditolak -> Action: Update (Jika Ditolak, CS masih bisa melakukan Update)
            C. (SCS_Lihat Data) Norek Sumber: Tidak Berubah -> Status: Aktif -> Action: Detail (Tidak ada Perubahan juga pada Detail)
@@ -52,6 +52,40 @@
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------[ PENONAKTIFAN DATA AKTIF ]----------------------------------------------------------------------------------
+9. Ajukan PENONAKTIFAN (Menunggu Approval)
+   (CS_Lihat Data) Customer Service Mengajukan Penonaktifan Data Aktif
+   Status (Awal) : Aktif
+   Action: - Detail (Tampilkan Detail Data & Tombol Ajukan Penonaktifan)
+             + Klik Ajukan Penonaktifan
+   Impact: A. (CS_Lihat Data) Status: Menunggu Persetujuan Penonaktifan -> Action: Detail (Tampilkan Detail & Status [Menunggu Persetujuan Penonaktifan])
+           B. (CS_Ubah Data Aktif) Data tidak ditampilkan (Dianggap Sudah Tidak Aktif)
+           C. (SCS_Lihat Data) Status Menunggu Persetujuan Penonaktifan -> Action: Detail (Tampilkan Detail & REJECT/APPROVE)
+           D. (SCS_Ubah Data Aktif) Data tidak ditampilkan (Dianggap Suadh Tidak Aktif)
+
+10. Ajukan PENONAKTIFAN (DIAPPROVE)
+    (SCS_Lihat Data) Supervisi Menyetujui Penonaktifan
+    Impact: A. (CS_Lihat Data) Status: Non Aktif -> Action: Detail (Tampilkan Detail & Status [Non Aktif])
+            B. (CS_Ubah Data Aktif) Data tidak Ditampilkan (Karena Sudah Tidak Aktif)
+            C. (SCS_Lihat Data) Status: Non Aktif -> Action: Detail (Tampilkan Detail & Status [Non Aktif])
+            D. (SCS_Ubah Data Aktif) Data tidak Ditampilkan (Karena Sudah Tidak Aktif)
+ ------------------------------------------------------------------------------------------------------------------------------------------------------
+ROLE:
+Status: 1. Menunggu Persetujuan Penonaktifan
+           A. Lihat Data:
+              (CS): Menunggu Persetujuan Penonaktifan
+              (SCS): Menunggu Persetujuan Penonaktifan
+           B. Ubah Data Aktif:
+              (CS_Ubah Data Aktif): Tidak Ada (Sudah Tidak Aktif)
+              (SCS_Udah Data Aktif): Tidak Ada (Sudah Tidak Aktif)
+        2. Data Telah Dinonaktifkan            
+           A. Lihat Data:
+              (CS): Non Aktif
+              (SCS): Non Aktif
+           B. Ubah Data Aktif
+              (CS): Tidak Ada (Sudah Tidak Aktif)
+              (SCS): Tidak Ada (Sudah Tidak Aktif)
+
+Laporan list: Semua Data beserta Statusnya
 
 
 
