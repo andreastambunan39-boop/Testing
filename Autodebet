@@ -24,7 +24,8 @@
            B. (CS_Lihat Data) Status: Aktif -> Action: Detail (Detail & Status [AKTIF] )
            C. (SC_Ubah Data Aktif) Status: Tidak Ada Perubahan -> Action: -
            D. (CS_Ubah Data Aktif) Status: Tidak Ada Perubahan -> Action: Update (Update Norek Sumber)
-       
+
+----------------------------------------------------------------------------[ UBAH DATA AKTIF ]----------------------------------------------------------------------------------       
 6. UBAH Data Aktif (Menunggu Approval)
    (CS_Ubah Data Aktif) Melakukan Perubahan Data Aktif
    Status: Tidak Ada Perubahan (Sebelum)
@@ -48,6 +49,9 @@
            B. (CS_Ubah Data Aktif) DSP/DP: Sesuai -> Status: Ditolak -> Action: Update (Jika Ditolak, CS masih bisa melakukan Update)
            C. (SCS_Lihat Data) Norek Sumber: Tidak Berubah -> Status: Aktif -> Action: Detail (Tidak ada Perubahan juga pada Detail)
            D. (SCS_Ubah Data Aktif) DSP/DP: Sesuai -> Status: Ditolak -> Action: -
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------[ PENONAKTIFAN DATA AKTIF ]----------------------------------------------------------------------------------
 
 
 
