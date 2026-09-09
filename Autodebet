@@ -1,0 +1,68 @@
+1. (CS_Lihat Data) Buat Data Standing
+   Status: Menunggu Persetujuan
+   Action: - Update (Update Semua Data Standing)
+           - Detail (Detail Data Standing & Status Dibagian Bawah)
+
+2. (CS_Lihat Data) Update Data Standing yang belum Diapprove
+   Status: Update Semua data standing
+   Action: - Reset (hapus semua data yang sudah diinput)
+           - Berikan perubahan
+           - Simpan (perubahan dapat dilihat saat pada Detail)
+
+3. (SC_Lihat Data) Approve Data yang Diajukan CS
+   Status: Menunggu persetujuan pengaktifan
+   Action: - Detail (Keterangan, REJECT & APPROVE)
+
+4. REJECT Data
+   (SC_Lihat Data) Melakukan REJECT
+   Impact: -(SC_Lihat Data) Status: Data Ditolak -> Action: Detail (Detail & Status [DITOLAK] )
+           -(CS_Lihat Data) Status: Data Ditolak -> Action: Detail (Detail & Status) [DITOLAK] )
+   
+5. APPROVE Data
+   (SC_Lihat Data) Melakukan APPROVE
+   Impact: A. (SC_Lihat Data) Status: Aktif -> Action: Detail (Detail & Status [AKTIF] )
+           B. (CS_Lihat Data) Status: Aktif -> Action: Detail (Detail & Status [AKTIF] )
+           C. (SC_Ubah Data Aktif) Status: Tidak Ada Perubahan -> Action: -
+           D. (CS_Ubah Data Aktif) Status: Tidak Ada Perubahan -> Action: Update (Update Norek Sumber)
+       
+6. UBAH Data Aktif (Menunggu Approval)
+   (CS_Ubah Data Aktif) Melakukan Perubahan Data Aktif
+   Status: Tidak Ada Perubahan (Sebelum)
+   Action: - Update (Norek Sumber)
+             + Simpan (Berikan perubahan & Simpan)
+         Impact: A. (CS_Lihat Data) Status: Aktif -> Action: Detail (Belum terdapat perubahan pada Detail Karena belum Diapprove)
+                 B. (CS_Ubah Data Aktif) DSP/DP: Sesuai -> Status: Menunggu Persetujuan Perubahan -> Action: Update (Update Norek Sumber)
+                 C. (SC_Lihat Data) Status: Aktif -> Action: Detail (Belum terdapat perubahan pada Detail karena belum Diapprove)
+                 D. (SC_Ubah Data Aktif) DSP/DP: Sesuai -> Status: Menunggu Persetujuan Perubahan -> Action: APPROVE/REJECT
+
+7. UBAH Data Aktif (DIAPPROVE)
+   (SC_Ubah Data Aktif) Supervisi telah menyetujui perubahan Data Aktif
+   Status: Sudah Disetujui
+   Action
+   Impact: A. (CS_Lihat Data) Status: Aktif, Norek Sumeber: Berubah -> Action: Detail (Perubahan Norek Sumber juga terlihat) 
+           B. (CS_Ubah Data Aktif) Status: Sudah Disetujui, Data Sebelum Perubahan dan sesudah -> Action: Update (masih bisa Diupdate wkwkw)
+           C. (SC_Lihat Data) Status: (Tidak Ada), Norek Sumebr: Berubah -> Action: Detail (Perubahan Norek Sumber juga terlihat)
+           D. (SC_Ubah Data Aktif) Status: Sudah Disetujui, Data Sebelum Perubahan dan sesudah -> Action: -
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
