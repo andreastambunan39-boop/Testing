@@ -32,18 +32,22 @@
              + Simpan (Berikan perubahan & Simpan)
          Impact: A. (CS_Lihat Data) Status: Aktif -> Action: Detail (Belum terdapat perubahan pada Detail Karena belum Diapprove)
                  B. (CS_Ubah Data Aktif) DSP/DP: Sesuai -> Status: Menunggu Persetujuan Perubahan -> Action: Update (Update Norek Sumber)
-                 C. (SC_Lihat Data) Status: Aktif -> Action: Detail (Belum terdapat perubahan pada Detail karena belum Diapprove)
-                 D. (SC_Ubah Data Aktif) DSP/DP: Sesuai -> Status: Menunggu Persetujuan Perubahan -> Action: APPROVE/REJECT
+                 C. (SCS_Lihat Data) Status: Aktif -> Action: Detail (Belum terdapat perubahan pada Detail karena belum Diapprove)
+                 D. (SCS_Ubah Data Aktif) DSP/DP: Sesuai -> Status: Menunggu Persetujuan Perubahan -> Action: APPROVE/REJECT
 
 7. UBAH Data Aktif (DIAPPROVE)
    (SC_Ubah Data Aktif) Supervisi telah menyetujui perubahan Data Aktif
-   Status: Sudah Disetujui
-   Action
-   Impact: A. (CS_Lihat Data) Status: Aktif, Norek Sumeber: Berubah -> Action: Detail (Perubahan Norek Sumber juga terlihat) 
-           B. (CS_Ubah Data Aktif) Status: Sudah Disetujui, Data Sebelum Perubahan dan sesudah -> Action: Update (masih bisa Diupdate wkwkw)
-           C. (SC_Lihat Data) Status: (Tidak Ada), Norek Sumebr: Berubah -> Action: Detail (Perubahan Norek Sumber juga terlihat)
-           D. (SC_Ubah Data Aktif) Status: Sudah Disetujui, Data Sebelum Perubahan dan sesudah -> Action: -
-FF
+   Impact: A. (CS_Lihat Data) Norek Sumber: Berubah -> Status: Aktif -> Action: Detail (Perubahan Norek Sumber juga terlihat) 
+           B. (CS_Ubah Data Aktif) DSP/DP: Sesuai -> Status: Sudah Disetujui -> Action: Update (masih bisa Diupdate)
+           C. (SCS_Lihat Data) Norek Sumber: Berubah -> Status: Aktif -> Action: Detail (Perubahan Norek Sumber juga terlihat) 
+           D. (SCS_Ubah Data Aktif) DSP/DP: Sesuai -> Status: Sudah Disetujui -> Action: -
+
+8. UBAH Data Aktif (Ditolak)
+   (SC_Ubah Data Aktif) Supervisi Menolak Perubahan Data Aktif
+   Impact: A. (CS_Lihat Data) Norek Sumber: Tidak Berubah -> Status: Aktif -> Action: Detail (Tidak ada perubahan juga pada Detail)
+           B. (CS_Ubah Data Aktif) DSP/DP: Sesuai -> Status: Ditolak -> Action: Update (Jika Ditolak, CS masih bisa melakukan Update)
+           C. (SCS_Lihat Data) Norek Sumber: Tidak Berubah -> Status: Aktif -> Action: Detail (Tidak ada Perubahan juga pada Detail)
+           D. (SCS_Ubah Data Aktif) DSP/DP: Sesuai -> Status: Ditolak -> Action: -
 
 
 
