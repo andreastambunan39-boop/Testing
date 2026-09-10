@@ -70,6 +70,11 @@
             D. (SCS_Ubah Data Aktif) Data tidak Ditampilkan (Karena Sudah Tidak Aktif)
 
 11. Ajukan PENONAKTIFAN (REJECT)
+    (SCS_Lihat Data) Supervisi Menolak Penonaktifan
+    Impact: A. (CS_Lihat Data) Status: Aktif -> Action: Detail (Tampilkan Detail & Tombol penonaktifan)
+            B. (CS_Ubah Data Aktif) Status: Tidak Ada Perubahan -> Action: Update (Update Norek Sumber)
+            C. (SCS_Lihat Data) Status: Aktif -> Action: Detail (Tampilkan Detail & Status)
+            D. (SCS_Ubah Data Aktif) Status: Tidak Ada Perubahan -> Action: -
  ------------------------------------------------------------------------------------------------------------------------------------------------------
 ROLE:
 Status: 1. Menunggu Persetujuan Penonaktifan
